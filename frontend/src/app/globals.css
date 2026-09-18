@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* ─── Modern Crisp Professional SaaS Theme (Linear / Stripe inspired) ── */
+:root {
+  /* Crisp Clean Surfaces */
+  --canvas: #F8FAFC;
+  --canvas-subtle: #F1F5F9;
+  --card: #FFFFFF;
+  --card-hover: #FFFFFF;
+  --well: #F8FAFC;
+  --well-alt: #F1F5F9;
+  --sidebar-bg: #FFFFFF;
+
+  /* Subtle Crisp Hairline Borders */
+  --border-subtle: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-strong: #94A3B8;
+
+  /* High-Contrast Clear Typography */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #64748B;
+  --text-muted: #94A3B8;
+
+  /* Semantic Status Colors */
+  --safe: #059669;
+  --safe-light: #10B981;
+  --safe-bg: #ECFDF5;
+  --safe-border: #A7F3D0;
+
+  --elevated: #D97706;
+  --elevated-bg: #FFFBEB;
+  --elevated-border: #FDE68A;
+
+  --critical: #E11D48;
+  --critical-bg: #FFF1F2;
+  --critical-border: #FECDD3;
+
+  /* Primary Interactive: Modern Clean Indigo/Blue */
+  --interactive: #2563EB;
+  --interactive-hover: #1D4ED8;
+  --interactive-bg: #EFF6FF;
+  --interactive-border: #BFDBFE;
+
+  --accent-indigo: #4F46E5;
+  --accent-violet: #7C3AED;
+  --accent-cyan: #0284C7;
+  --accent-terracotta: #EA580C;
+  --accent-ochre: #D97706;
+
+  /* Geometry & Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Soft Natural Shadows */
+  --shadow-subtle: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 6px 16px -4px rgba(15, 23, 42, 0.04);
+  --shadow-lifted: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+/* ─── Global Reset & Body ───────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--canvas);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── Clean Typography ──────────────────────────────────── */
+.font-serif {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+/* ─── Modern Crisp Card System ──────────────────────────── */
+.card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-lifted);
+}
+
+.card-well {
+  background: var(--well);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* ─── Professional Buttons ──────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--interactive);
+  color: #FFFFFF;
+  border-color: var(--interactive);
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.15), 0 2px 6px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary:hover {
+  background: var(--interactive-hover);
+  border-color: var(--interactive-hover);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2), 0 4px 10px rgba(37, 99, 235, 0.15);
+}
+
+.btn-ghost {
+  background: #FFFFFF;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.btn-ghost:hover {
+  background: var(--well);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.btn-danger {
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.btn-danger:hover {
+  background: #FFE4E6;
+}
+
+.btn-lg {
+  padding: 0.85rem 2rem;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-lg);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Clean Form Inputs ─────────────────────────────────── */
+.input, .input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.input:focus, .input-field:focus {
+  border-color: var(--interactive);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input::placeholder, .input-field::placeholder {
+  color: var(--text-muted);
+}
+
+/* ─── Status Badges ─────────────────────────────────────── */
+.tier-manageable {
+  background: var(--safe-bg);
+  color: var(--safe);
+  border: 1px solid var(--safe-border);
+}
+
+.tier-elevated {
+  background: var(--elevated-bg);
+  color: var(--elevated);
+  border: 1px solid var(--elevated-border);
+}
+
+.tier-critical {
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Clean Sidebar Navigation ──────────────────────────── */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  background: #FFFFFF;
+  border-right: 1px solid var(--border-subtle);
+  padding: 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-right: 0.85rem;
+}
+
+.sidebar-link:hover {
+  color: var(--text-primary);
+  background: #F8FAFC;
+}
+
+.sidebar-link.active {
+  color: var(--interactive);
+  background: #EFF6FF;
+  border-left-color: var(--interactive);
+  font-weight: 600;
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 2.5rem 3.5rem;
+  min-height: 100vh;
+  max-width: 1480px;
+}
+
+/* ─── Modern Crisp Range Sliders ────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 2.5px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.2);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #1D4ED8;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 2.5px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.2);
+  cursor: pointer;
+}
+
+/* ─── Steppers & Segmented Controls ─────────────────────── */
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.step-dot.active {
+  background: #2563EB;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.step-dot.completed {
+  background: #059669;
+  color: #FFFFFF;
+}
+
+.step-dot.inactive {
+  background: #F1F5F9;
+  color: #64748B;
+  border: 1px solid var(--border-subtle);
+}
+
+.pill-group {
+  display: flex;
+  gap: 0.5rem;
+  background: #F8FAFC;
+  padding: 0.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.pill-btn {
+  flex: 1;
+  padding: 0.625rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.pill-btn:hover {
+  color: var(--text-primary);
+  background: #FFFFFF;
+}
+
+.pill-btn.active {
+  background: #FFFFFF;
+  color: #2563EB;
+  font-weight: 600;
+  border-color: var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── Clean Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
